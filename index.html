@@ -3,776 +3,761 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kalman Systems — Marketing e automação para revendas de veículos e clínicas</title>
-<meta name="description" content="Tráfego pago, robô de WhatsApp e agendamento automático para revendas de veículos e clínicas médicas. Campinas, região e São Paulo. Medido de ponta a ponta.">
+<title>Kalman Systems — Sites, Tráfego e Automação para Empresas de Campinas</title>
+<meta name="description" content="Consultoria digital para pequenas e médias empresas de Campinas e região. Sites, gestão de tráfego pago e automação de atendimento no WhatsApp, com resultado medido.">
+<meta property="og:title" content="Kalman Systems — Consultoria digital para PMEs">
+<meta property="og:description" content="Sites, tráfego pago e automação de atendimento para empresas de Campinas e região.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kalmansystems.com.br">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#0A1F33">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230A1F33'/><path d='M10 8v16M10 16l7-8M10 16l7 8' stroke='%23C2551F' stroke-width='2.5' fill='none' stroke-linecap='round'/></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Kalman Systems",
+  "description": "Consultoria digital para pequenas e médias empresas: criação de sites, gestão de tráfego pago e automação de atendimento.",
+  "areaServed": "Campinas e Região Metropolitana, São Paulo, Brasil",
+  "url": "https://kalmansystems.com.br",
+  "telephone": "+5519997528044",
+  "email": "contato@kalmansystems.com.br",
+  "priceRange": "$$"
+}
+</script>
+
 <style>
-  :root{
-    --bg:#070D17;
-    --bg-2:#0B1524;
-    --surface:#101D31;
-    --surface-2:#152541;
-    --ink:#EAF1F9;
-    --muted:#8FA1B8;
-    --line:rgba(143,161,184,.16);
-    --accent:#FF6B2C;
-    --accent-dark:#E5541A;
-    --cyan:#22D3EE;
-    --wa:#25D366;
-    --wa-dark:#1DA851;
-    --grad:linear-gradient(92deg,#FF6B2C 0%,#22D3EE 100%);
-    --radius:16px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto}
-    *{animation:none!important;transition:none!important}
-    .reveal{opacity:1!important;transform:none!important}
-    .bar-fill{width:var(--w)!important}
-  }
-  body{
-    font-family:'IBM Plex Sans',sans-serif;
-    background:var(--bg);color:var(--ink);line-height:1.65;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  a{color:inherit}
-  svg{display:block;max-width:100%}
-  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
-  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
-  .mono{font-family:'IBM Plex Mono',monospace}
-  h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-.015em}
-  h2{font-size:clamp(27px,3.6vw,40px);line-height:1.1}
-  .eyebrow{
-    font-family:'IBM Plex Mono',monospace;font-size:12.5px;
-    letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);
-    margin-bottom:14px;font-weight:500;
-  }
-  .sec-head{margin-bottom:46px;max-width:700px}
-  .sec-head p{margin-top:12px;color:var(--muted);font-size:17px}
-  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* =====================================================================
+   Kalman Systems — folha de estilo única
+   Registro visual: consultoria técnica. Navy dominante, laranja escasso.
+   ===================================================================== */
 
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
-  .reveal.in{opacity:1;transform:none}
-  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+:root{
+  --navy-900:#0A1F33;
+  --navy-800:#102C46;
+  --navy-700:#1B4165;
+  --ink:#16283A;
+  --ink-soft:#5B6D7E;
+  --ink-faint:#8C9AA7;
+  --paper:#FFFFFF;
+  --paper-alt:#F4F6F8;
+  --line:#DCE3E9;
+  --line-soft:#EBEFF3;
+  --accent:#C2551F;
+  --accent-soft:#F7ECE5;
+  --steel:#4A7FA5;
 
-  /* ---------- buttons ---------- */
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;justify-content:center;
-    text-decoration:none;font-weight:600;
-    padding:14px 26px;border-radius:10px;font-size:15.5px;
-    transition:transform .15s ease, box-shadow .2s ease, background .15s ease;
-    cursor:pointer;border:none;position:relative;
-  }
-  .btn:hover{transform:translateY(-2px)}
-  .btn-primary{background:var(--accent);color:#fff}
-  .btn-primary:hover{background:var(--accent-dark);box-shadow:0 10px 30px rgba(255,107,44,.38)}
-  .btn-wa{background:var(--wa);color:#06240F}
-  .btn-wa:hover{background:#2EE477;box-shadow:0 10px 30px rgba(37,211,102,.35)}
-  .btn-ghost{border:1.5px solid var(--line);color:var(--ink);background:transparent}
-  .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
-  .wa-ic{width:19px;height:19px;flex-shrink:0}
+  --serif:"IBM Plex Serif",Georgia,serif;
+  --sans:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
 
-  /* ---------- nav ---------- */
-  nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(7,13,23,.82);backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1140px;margin:0 auto}
-  .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
-  .logo-mark{
-    width:40px;height:40px;border-radius:10px;flex-shrink:0;
-    background:linear-gradient(135deg,var(--surface-2),var(--surface));
-    border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;
-  }
-  .logo-word{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17px;line-height:1.05;letter-spacing:.02em}
-  .logo-word small{
-    display:block;font-family:'IBM Plex Mono',monospace;font-weight:400;
-    font-size:9.5px;letter-spacing:.36em;color:var(--muted);
-  }
-  .nav-links{display:flex;gap:26px;align-items:center;font-size:15px}
-  .nav-links a:not(.btn){text-decoration:none;color:var(--muted);font-weight:500;transition:color .15s}
-  .nav-links a:not(.btn):hover{color:var(--ink)}
-  .nav-cta{padding:9px 18px;font-size:14px}
-  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
-  .menu-btn svg{width:26px;height:26px}
-  .mobile-menu{display:none;flex-direction:column;padding:8px 24px 18px;border-top:1px solid var(--line);background:rgba(7,13,23,.97)}
-  .mobile-menu a{text-decoration:none;padding:13px 4px;font-weight:500;color:var(--ink);border-bottom:1px solid var(--line)}
-  .mobile-menu a:last-child{border-bottom:none;color:var(--wa)}
-  .mobile-menu.open{display:flex}
+  --container:1160px;
+  --header-h:70px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
 
-  /* ---------- hero ---------- */
-  .hero{position:relative;padding:92px 0 64px;overflow:hidden}
-  .hero::before{
-    content:"";position:absolute;inset:0;
-    background:
-      radial-gradient(560px 380px at 78% 8%, rgba(34,211,238,.13), transparent 65%),
-      radial-gradient(620px 420px at 12% 92%, rgba(255,107,44,.11), transparent 65%),
-      repeating-linear-gradient(0deg, transparent, transparent 47px, rgba(143,161,184,.05) 48px),
-      repeating-linear-gradient(90deg, transparent, transparent 47px, rgba(143,161,184,.05) 48px);
-    pointer-events:none;
-  }
-  .hero-glow{
-    position:absolute;width:520px;height:520px;border-radius:50%;
-    background:radial-gradient(circle, rgba(34,211,238,.10), transparent 70%);
-    top:-160px;right:-120px;animation:float 9s ease-in-out infinite;pointer-events:none;
-  }
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(34px)}}
-  .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:56px;align-items:center;position:relative}
-  h1{font-weight:700;font-size:clamp(34px,5vw,58px);line-height:1.06}
-  .hero p.lead{margin:22px 0 32px;font-size:18.5px;color:var(--muted);max-width:560px}
-  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-note{margin-top:14px;font-size:13.5px;color:var(--muted)}
-  .nichos-tag{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
-  .nicho-pill{
-    display:inline-flex;align-items:center;gap:8px;
-    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;
-    padding:8px 15px;border-radius:999px;border:1px solid var(--line);
-    background:rgba(16,29,49,.6);color:var(--ink);
-  }
-  .nicho-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
-  .nicho-pill.p2 .dot{background:var(--accent);box-shadow:0 0 8px var(--accent)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px);-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.65;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
 
-  .hero-panel{
-    background:linear-gradient(160deg,var(--surface) 0%,var(--bg-2) 100%);
-    border:1px solid var(--line);border-radius:var(--radius);padding:26px;
-    box-shadow:0 24px 60px rgba(0,0,0,.45);position:relative;
-  }
-  .chart-label{
-    display:flex;justify-content:space-between;
-    font-family:'IBM Plex Mono',monospace;font-size:11.5px;
-    color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;
-  }
-  .draw{stroke-dasharray:460;stroke-dashoffset:460;animation:draw 2.4s ease-out .4s forwards}
-  .draw2{stroke-dasharray:240;stroke-dashoffset:240;animation:draw 1.7s ease-out 1.6s forwards}
-  @keyframes draw{to{stroke-dashoffset:0}}
-  .dot-pulse{animation:pulse 2s ease-in-out 3.2s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
-  .chart-foot{
-    display:flex;justify-content:space-between;margin-top:10px;
-    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);
-  }
-  .chart-foot .est{color:var(--accent)}
-  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);margin-top:22px;border-radius:0 0 8px 8px;overflow:hidden}
-  .hstat{background:var(--surface);padding:16px 10px;text-align:center}
-  .hstat b{display:block;font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--cyan)}
-  .hstat span{font-size:11.5px;color:var(--muted);line-height:1.35;display:block;margin-top:3px}
+.wrap{width:min(var(--container),100% - 48px);margin-inline:auto}
+.wrap--narrow{max-width:780px}
 
-  /* ---------- marquee ---------- */
-  .marquee-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2);padding:20px 0;overflow:hidden}
-  .marquee-title{
-    text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11.5px;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;
-  }
-  .marquee{display:flex;overflow:hidden;user-select:none;gap:0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-  .marquee-track{display:flex;flex-shrink:0;gap:14px;padding-right:14px;animation:scroll 26s linear infinite}
-  @keyframes scroll{to{transform:translateX(-100%)}}
-  .plat{
-    font-family:'IBM Plex Mono',monospace;font-size:13.5px;white-space:nowrap;
-    padding:9px 18px;border:1px solid var(--line);border-radius:999px;
-    color:var(--ink);background:var(--surface);
-  }
-  .plat b{color:var(--cyan);font-weight:500}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.2;letter-spacing:-.015em;color:var(--navy-900)}
+h1{font-size:clamp(2rem,4.2vw,3.35rem);line-height:1.12}
+h2{font-size:clamp(1.55rem,2.8vw,2.15rem)}
+h3{font-size:1.1rem;font-weight:600;letter-spacing:-.005em}
 
-  section{padding:84px 0;position:relative}
+/* Rótulo monoespaçado — marca de "dado", não de decoração */
+.label{
+  font-family:var(--mono);
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+.label::after{content:"";flex:1;max-width:64px;height:1px;background:var(--line)}
+.label--light{color:#D8A184}
+.label--light::after{background:rgba(255,255,255,.2)}
 
-  /* ---------- nichos ---------- */
-  .nichos{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .nicho{
-    background:linear-gradient(165deg,var(--surface) 0%,var(--bg-2) 100%);
-    border:1px solid var(--line);border-radius:var(--radius);
-    padding:38px 34px;position:relative;overflow:hidden;
-    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-  }
-  .nicho:hover{transform:translateY(-5px);box-shadow:0 22px 50px rgba(0,0,0,.5)}
-  .nicho.car:hover{border-color:rgba(34,211,238,.5)}
-  .nicho.cli:hover{border-color:rgba(255,107,44,.5)}
-  .nicho::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
-  .nicho.car::before{background:linear-gradient(90deg,var(--cyan),transparent)}
-  .nicho.cli::before{background:linear-gradient(90deg,var(--accent),transparent)}
-  .nicho .tag{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;
-    text-transform:uppercase;margin-bottom:14px;font-weight:500;
-  }
-  .nicho.car .tag{color:var(--cyan)}
-  .nicho.cli .tag{color:var(--accent)}
-  .nicho h3{font-size:24px;margin-bottom:12px}
-  .nicho>p{color:var(--muted);font-size:15.5px;margin-bottom:24px}
-  .entregas{display:grid;gap:12px;margin-bottom:28px}
-  .entrega{display:flex;gap:12px;align-items:flex-start;font-size:15px}
-  .entrega .chk{
-    width:21px;height:21px;border-radius:6px;flex-shrink:0;margin-top:2px;
-    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;
-  }
-  .nicho.car .chk{background:rgba(34,211,238,.15);color:var(--cyan);border:1px solid rgba(34,211,238,.4)}
-  .nicho.cli .chk{background:rgba(255,107,44,.15);color:var(--accent);border:1px solid rgba(255,107,44,.4)}
-  .nicho .lgpd{
-    margin-top:20px;padding-top:15px;border-top:1px dashed var(--line);
-    font-size:12.5px;color:var(--muted);
-  }
+/* ---------- Botões ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--sans);font-weight:500;font-size:.94rem;
+  padding:13px 26px;border:1px solid transparent;border-radius:2px;
+  text-decoration:none;cursor:pointer;
+  transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease);
+}
+.btn svg{transition:transform .2s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn--solid{background:var(--navy-900);color:#fff}
+.btn--solid:hover{background:var(--navy-700)}
+.btn--accent{background:var(--accent);color:#fff}
+.btn--accent:hover{background:#A8481A}
+.btn--line{border-color:var(--line);color:var(--navy-900);background:transparent}
+.btn--line:hover{border-color:var(--navy-900);background:var(--paper-alt)}
+.btn--light{background:#fff;color:var(--navy-900)}
+.btn--light:hover{background:var(--paper-alt)}
+.btn--sm{padding:9px 18px;font-size:.86rem}
+.btn--full{width:100%}
 
-  /* ---------- funil ---------- */
-  .funil-box{
-    background:linear-gradient(160deg,var(--surface) 0%,var(--bg-2) 100%);
-    border:1px solid var(--line);border-radius:var(--radius);padding:42px 40px;
-  }
-  .frow{display:grid;grid-template-columns:190px 1fr 190px;gap:18px;align-items:center;padding:15px 0;border-bottom:1px dashed var(--line)}
-  .frow:last-child{border-bottom:none}
-  .frow .fl{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px}
-  .frow .fr{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-align:right}
-  .bar{height:30px;border-radius:7px;background:rgba(143,161,184,.08);overflow:hidden;position:relative}
-  .bar-fill{
-    height:100%;width:0;border-radius:7px;
-    background:linear-gradient(90deg,rgba(34,211,238,.85),rgba(34,211,238,.35));
-    transition:width 1.3s cubic-bezier(.2,.7,.3,1);
-  }
-  .frow:nth-child(3) .bar-fill{background:linear-gradient(90deg,rgba(34,211,238,.7),rgba(255,107,44,.5))}
-  .frow:nth-child(4) .bar-fill,.frow:nth-child(5) .bar-fill{background:linear-gradient(90deg,rgba(255,107,44,.9),rgba(255,107,44,.4))}
-  .in .bar-fill{width:var(--w)}
-  .funil-note{
-    margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);
-    text-align:center;letter-spacing:.04em;
-  }
+/* ---------- Cabeçalho ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:100;
+  background:rgba(255,255,255,0);
+  transition:background .3s var(--ease),box-shadow .3s var(--ease);
+}
+.header.is-stuck{
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(180%) blur(10px);
+  -webkit-backdrop-filter:saturate(180%) blur(10px);
+  box-shadow:0 1px 0 var(--line);
+}
+.header__in{height:100%;display:flex;align-items:center;gap:36px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.brand__mark{width:26px;height:26px;flex-shrink:0}
+.brand__txt{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--navy-900);letter-spacing:-.01em}
+.brand__txt b{font-weight:600}
+.nav{display:flex;gap:30px;margin-left:auto}
+.nav a{font-size:.9rem;color:var(--ink-soft);text-decoration:none;position:relative;padding:4px 0;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--accent);transition:width .25s var(--ease)}
+.nav a:hover{color:var(--navy-900)}
+.nav a:hover::after{width:100%}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:8px;cursor:pointer;margin-left:auto}
+.burger span{width:20px;height:1.5px;background:var(--navy-900);transition:transform .3s var(--ease),opacity .2s}
+.burger.is-open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.is-open span:nth-child(2){opacity:0}
+.burger.is-open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
-  /* ---------- sistema ---------- */
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-  .card{
-    background:linear-gradient(165deg,var(--surface) 0%,var(--bg-2) 100%);
-    border:1px solid var(--line);border-radius:var(--radius);
-    padding:32px 28px;transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-  }
-  .card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.4);box-shadow:0 18px 44px rgba(0,0,0,.45)}
-  .card .ic{
-    width:48px;height:48px;border-radius:12px;
-    background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.3);
-    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
-  }
-  .card h3{font-size:19.5px;margin-bottom:9px}
-  .card p{color:var(--muted);font-size:15px}
-  .card .result{
-    margin-top:18px;padding-top:15px;border-top:1px dashed var(--line);
-    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent);
-  }
-  .flow-hint{
-    margin-top:30px;text-align:center;
-    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);letter-spacing:.05em;
-  }
-  .flow-hint b{color:var(--cyan);font-weight:500}
+/* ---------- Hero ---------- */
+.hero{padding:calc(var(--header-h) + 76px) 0 84px;border-bottom:1px solid var(--line)}
+.hero__in{display:grid;grid-template-columns:1fr .92fr;gap:64px;align-items:center}
+.hero h1 em{font-style:italic;color:var(--navy-700)}
+.hero__sub{font-size:1.1rem;color:var(--ink-soft);margin:22px 0 32px;max-width:48ch}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero__meta{
+  display:flex;gap:0;margin-top:48px;border-top:1px solid var(--line);
+  list-style:none;flex-wrap:wrap;
+}
+.hero__meta li{padding:20px 28px 0 0;margin-right:28px;border-right:1px solid var(--line)}
+.hero__meta li:last-child{border-right:0;margin-right:0;padding-right:0}
+.hero__meta b{display:block;font-family:var(--serif);font-size:1.75rem;font-weight:500;color:var(--navy-900);line-height:1.1}
+.hero__meta span{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-top:6px}
 
-  /* ---------- método ---------- */
-  .metodo{
-    background:linear-gradient(150deg,var(--surface-2) 0%,var(--bg-2) 100%);
-    border:1px solid var(--line);border-radius:20px;padding:60px 50px;
-    position:relative;overflow:hidden;
-  }
-  .metodo::after{
-    content:"";position:absolute;right:-140px;top:-140px;width:380px;height:380px;border-radius:50%;
-    background:radial-gradient(circle, rgba(34,211,238,.14) 0%, transparent 70%);
-  }
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;margin-top:40px;position:relative;z-index:1}
-  .step .num{
-    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--cyan);
-    letter-spacing:.12em;margin-bottom:10px;
-  }
-  .step h3{font-size:20px;margin-bottom:7px}
-  .step p{font-size:15px;color:var(--muted)}
+/* ---------- Assinatura: sinal vs. ruído ---------- */
+.figure{border:1px solid var(--line);background:var(--paper);padding:26px 26px 20px}
+.figure__head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.figure__title{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+.figure__legend{display:flex;gap:16px;font-family:var(--mono);font-size:.66rem;color:var(--ink-soft)}
+.figure__legend i{display:inline-block;width:14px;height:2px;margin-right:6px;vertical-align:middle}
+.figure__legend .k-noise{background:var(--line)}
+.figure__legend .k-signal{background:var(--accent)}
+.figure svg{width:100%;height:auto}
+.figure__foot{
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft);
+  font-size:.8rem;color:var(--ink-soft);
+}
+.trace{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.2s var(--ease) forwards}
+.trace--noise{animation-delay:.3s}
+.trace--signal{animation-delay:.9s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.marker{opacity:0;animation:fadeIn .6s ease forwards 2.6s}
+@keyframes fadeIn{to{opacity:1}}
 
-  /* ---------- prova ---------- */
-  .cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px}
-  .case{
-    background:linear-gradient(165deg,var(--surface) 0%,var(--bg-2) 100%);
-    border:1px solid var(--line);border-radius:var(--radius);padding:32px 30px;
-  }
-  .case .setor{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--muted);margin-bottom:12px;
-  }
-  .case h3{font-size:19.5px;margin-bottom:10px}
-  .case>p{color:var(--muted);font-size:15px}
-  .metrics{display:flex;gap:32px;margin-top:22px;flex-wrap:wrap}
-  .metric b{display:block;font-family:'Space Grotesk',sans-serif;font-size:28px;color:var(--accent)}
-  .metric span{font-size:13px;color:var(--muted)}
-  .disclaimer{margin-top:16px;font-size:12.5px;color:var(--muted);font-style:italic}
+/* ---------- Faixa de segmentos ---------- */
+.strip{background:var(--paper-alt);border-bottom:1px solid var(--line);padding:26px 0}
+.strip__in{display:flex;align-items:center;gap:14px 40px;flex-wrap:wrap}
+.strip__lead{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap}
+.strip ul{list-style:none;display:flex;gap:12px 34px;flex-wrap:wrap}
+.strip li{font-size:.92rem;color:var(--ink);display:flex;align-items:center;gap:9px}
+.strip li::before{content:"";width:4px;height:4px;background:var(--steel);flex-shrink:0}
 
-  /* ---------- sobre ---------- */
-  .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-  .sobre-facts{display:grid;gap:17px}
-  .fact{display:flex;gap:14px;align-items:flex-start}
-  .fact .mark{color:var(--accent);font-family:'IBM Plex Mono',monospace;font-weight:500;flex-shrink:0;margin-top:2px}
-  .fact p{font-size:15.5px}
+/* ---------- Seções ---------- */
+.sec{padding:96px 0}
+.sec--alt{background:var(--paper-alt);border-block:1px solid var(--line)}
+.sec__head{max-width:660px;margin-bottom:56px}
+.sec__sub{color:var(--ink-soft);margin-top:16px;font-size:1.05rem}
 
-  /* ---------- FAQ ---------- */
-  .faq{max-width:780px;margin:0 auto}
-  details{
-    background:linear-gradient(165deg,var(--surface) 0%,var(--bg-2) 100%);
-    border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;
-    transition:border-color .2s ease;
-  }
-  details[open]{border-color:rgba(34,211,238,.4)}
-  summary{
-    cursor:pointer;list-style:none;padding:21px 26px;
-    font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16.5px;
-    display:flex;justify-content:space-between;align-items:center;gap:16px;
-  }
-  summary::-webkit-details-marker{display:none}
-  summary .pm{
-    font-family:'IBM Plex Mono',monospace;color:var(--accent);flex-shrink:0;
-    transition:transform .2s ease;font-size:19px;
-  }
-  details[open] summary .pm{transform:rotate(45deg)}
-  details .ans{padding:0 26px 23px;color:var(--muted);font-size:15.5px}
+/* ---------- Serviços ---------- */
+.grid-svc{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc{background:var(--paper);padding:40px 36px;transition:background .25s var(--ease)}
+.svc:hover{background:var(--paper-alt)}
+.svc__idx{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--ink-faint);display:block;margin-bottom:22px}
+.svc h3{margin-bottom:12px}
+.svc > p{font-size:.95rem;color:var(--ink-soft);margin-bottom:22px}
+.svc ul{list-style:none;display:grid;gap:9px;border-top:1px solid var(--line-soft);padding-top:20px}
+.svc li{font-size:.87rem;color:var(--ink-soft);padding-left:18px;position:relative}
+.svc li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:1px;background:var(--accent)}
 
-  /* ---------- cta final ---------- */
-  .cta-final{text-align:center;padding:96px 24px;position:relative;overflow:hidden}
-  .cta-final::before{
-    content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-    width:720px;height:420px;border-radius:50%;
-    background:radial-gradient(ellipse, rgba(255,107,44,.12), transparent 70%);pointer-events:none;
-  }
-  .cta-final h2{margin-bottom:14px;position:relative}
-  .cta-final p{color:var(--muted);max-width:520px;margin:0 auto 32px;font-size:17px;position:relative}
+/* ---------- Processo ---------- */
+.steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.step{padding:0 28px 0 0;border-top:2px solid var(--navy-900);padding-top:24px;margin-right:28px;position:relative}
+.step:last-child{margin-right:0;padding-right:0}
+.step__n{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--accent);display:block;margin-bottom:14px}
+.step h3{margin-bottom:10px;font-size:1.02rem}
+.step p{font-size:.88rem;color:var(--ink-soft)}
 
-  footer{border-top:1px solid var(--line);padding:32px 0;font-size:14px;color:var(--muted)}
-  .foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+/* ---------- Planos ---------- */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.plan{background:var(--paper);border:1px solid var(--line);padding:36px 30px;display:flex;flex-direction:column;transition:border-color .25s var(--ease)}
+.plan:hover{border-color:var(--navy-700)}
+.plan--mark{border-color:var(--navy-900);border-width:1px;box-shadow:0 0 0 1px var(--navy-900);position:relative}
+.plan__tag{
+  position:absolute;top:0;right:0;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--navy-900);color:#fff;padding:6px 12px;
+}
+.plan__scope{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;display:block}
+.plan h3{font-family:var(--serif);font-size:1.35rem;font-weight:500;margin-bottom:10px}
+.plan__desc{font-size:.92rem;color:var(--ink-soft);margin-bottom:26px;padding-bottom:24px;border-bottom:1px solid var(--line-soft)}
+.plan ul{list-style:none;display:grid;gap:12px;margin-bottom:30px;flex:1}
+.plan li{font-size:.9rem;padding-left:20px;position:relative;color:var(--ink)}
+.plan li::before{content:"";position:absolute;left:0;top:8px;width:9px;height:1px;background:var(--accent)}
 
-  /* ---------- botão flutuante ---------- */
-  .wa-float{
-    position:fixed;right:22px;bottom:22px;z-index:60;
-    width:58px;height:58px;border-radius:50%;background:var(--wa);
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 8px 26px rgba(37,211,102,.45);
-    transition:transform .15s ease;
-  }
-  .wa-float::after{
-    content:"";position:absolute;inset:-5px;border-radius:50%;
-    border:2px solid rgba(37,211,102,.5);animation:ring 2.2s ease-out infinite;
-  }
-  @keyframes ring{0%{transform:scale(.85);opacity:1}100%{transform:scale(1.35);opacity:0}}
-  .wa-float:hover{transform:scale(1.08)}
-  .wa-float svg{width:30px;height:30px}
+/* ---------- FAQ ---------- */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:24px 0;
+  font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--navy-900);
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";flex-shrink:0;width:11px;height:11px;
+  border-right:1.5px solid var(--accent);border-bottom:1.5px solid var(--accent);
+  transform:rotate(45deg) translate(-2px,-2px);
+  transition:transform .3s var(--ease);
+}
+.faq details[open] summary::after{transform:rotate(225deg) translate(-2px,-2px)}
+.faq details p{padding:0 0 26px;font-size:.95rem;color:var(--ink-soft);max-width:70ch}
 
-  @media(max-width:900px){
-    .hero-grid{grid-template-columns:1fr}
-    .nichos{grid-template-columns:1fr}
-    .sobre-grid{grid-template-columns:1fr}
-    .nav-links{display:none}
-    .menu-btn{display:block}
-    .hero{padding:56px 0 48px}
-    section{padding:64px 0}
-    .metodo{padding:44px 28px}
-    .funil-box{padding:30px 22px}
-    .frow{grid-template-columns:1fr;gap:8px}
-    .frow .fr{text-align:left}
+/* ---------- Chamada final ---------- */
+.cta{background:var(--navy-900);color:#fff;padding:92px 0;position:relative;overflow:hidden}
+.cta::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 80% at 85% 50%,rgba(74,127,165,.22),transparent 70%);
+}
+.cta__in{position:relative;display:grid;grid-template-columns:1.3fr auto;gap:48px;align-items:center}
+.cta h2{color:#fff;margin-bottom:14px}
+.cta p{color:rgba(255,255,255,.72);max-width:52ch}
+.cta__side{display:grid;gap:12px;justify-items:start}
+.cta__phone{font-family:var(--mono);font-size:.82rem;color:rgba(255,255,255,.55);text-decoration:none}
+.cta__phone:hover{color:#fff}
+
+/* ---------- Rodapé ---------- */
+.foot{background:var(--paper);border-top:1px solid var(--line);padding:60px 0 0}
+.foot__in{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:44px;padding-bottom:44px}
+.foot p{font-size:.88rem;color:var(--ink-soft);margin-top:14px;max-width:34ch}
+.foot h4{font-family:var(--mono);font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px}
+.foot__col{display:grid;gap:10px;align-content:start}
+.foot__col a{font-size:.9rem;color:var(--ink-soft);text-decoration:none;width:fit-content;transition:color .2s}
+.foot__col a:hover{color:var(--accent)}
+.foot__legal{border-top:1px solid var(--line);padding:22px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot__legal p{margin:0;font-size:.78rem;color:var(--ink-faint);max-width:none}
+
+/* ---------- WhatsApp fixo ---------- */
+.wa{
+  position:fixed;right:22px;bottom:22px;z-index:90;
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--navy-900);color:#fff;text-decoration:none;
+  padding:12px 18px;border-radius:2px;
+  font-size:.86rem;font-weight:500;
+  box-shadow:0 8px 24px rgba(10,31,51,.24);
+  transition:background .2s var(--ease),transform .2s var(--ease);
+}
+.wa:hover{background:var(--accent);transform:translateY(-2px)}
+
+/* ---------- Revelação em rolagem ---------- */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.grid-svc .rv:nth-child(2),.steps .rv:nth-child(2),.plans .rv:nth-child(2){transition-delay:.08s}
+.grid-svc .rv:nth-child(3),.steps .rv:nth-child(3),.plans .rv:nth-child(3){transition-delay:.16s}
+.grid-svc .rv:nth-child(4),.steps .rv:nth-child(4){transition-delay:.24s}
+
+/* ---------- Acessibilidade ---------- */
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy-900);color:#fff;padding:12px 20px;z-index:200}
+.skip:focus{left:12px;top:12px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+  .trace{stroke-dashoffset:0}
+  .marker{opacity:1}
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:1040px){
+  .steps{grid-template-columns:repeat(2,1fr);gap:32px 0}
+  .plans{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
+  .cta__in{grid-template-columns:1fr;gap:32px}
+}
+@media (max-width:900px){
+  .hero__in{grid-template-columns:1fr;gap:52px}
+  .grid-svc{grid-template-columns:1fr}
+  .foot__in{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media (max-width:720px){
+  .header .btn{display:none}
+  .burger{display:flex}
+  .nav{
+    position:fixed;top:var(--header-h);left:0;right:0;
+    background:#fff;border-bottom:1px solid var(--line);
+    flex-direction:column;gap:0;padding:4px 24px 14px;margin:0;
+    opacity:0;transform:translateY(-10px);pointer-events:none;
+    transition:opacity .25s var(--ease),transform .25s var(--ease);
+    box-shadow:0 12px 24px rgba(10,31,51,.06);
   }
+  .nav.is-open{opacity:1;transform:none;pointer-events:auto}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+  .nav a:last-child{border-bottom:0}
+  .sec{padding:68px 0}
+  .hero{padding-bottom:64px}
+  .steps{grid-template-columns:1fr}
+  .step{margin-right:0;padding-right:0}
+  .hero__meta li{padding-right:20px;margin-right:20px}
+  .foot__in{grid-template-columns:1fr}
+  .wa span{display:none}
+  .wa{padding:14px;border-radius:50%}
+}
 </style>
 </head>
 <body>
+<a href="#conteudo" class="skip">Ir para o conteúdo</a>
 
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="#" aria-label="Kalman Systems — início">
-      <span class="logo-mark" aria-hidden="true">
-        <svg width="23" height="23" viewBox="0 0 24 24" fill="none">
-          <path d="M3 17 L8 9 L12 13 L16 6 L21 10" stroke="#22D3EE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="21" cy="10" r="2.4" fill="#FF6B2C"/>
-        </svg>
-      </span>
-      <span class="logo-word">KALMAN<small>SYSTEMS</small></span>
-    </a>
-    <div class="nav-links">
-      <a href="#nichos">Para quem</a>
-      <a href="#funil">Como funciona</a>
-      <a href="#metodo">Método</a>
-      <a href="#resultados">Resultados</a>
-      <a href="#faq">Dúvidas</a>
-      <a class="btn btn-wa nav-cta" href="https://wa.me/5519997528044?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Kalman%20Systems%20e%20quero%20um%20diagn%C3%B3stico." target="_blank" rel="noopener">Falar no WhatsApp</a>
-    </div>
-    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" onclick="toggleMenu(this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#EAF1F9" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#nichos" onclick="closeMenu()">Para quem</a>
-    <a href="#funil" onclick="closeMenu()">Como funciona</a>
-    <a href="#metodo" onclick="closeMenu()">Método</a>
-    <a href="#resultados" onclick="closeMenu()">Resultados</a>
-    <a href="#faq" onclick="closeMenu()">Dúvidas</a>
-    <a href="https://wa.me/5519997528044?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Kalman%20Systems%20e%20quero%20um%20diagn%C3%B3stico." target="_blank" rel="noopener">Falar no WhatsApp →</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Marketing + automação · Campinas, região e São Paulo</p>
-      <h1>Carro vendido e agenda cheia, <span class="grad-text">no automático.</span></h1>
-      <p class="lead">Tráfego pago, robô de WhatsApp e agendamento integrado operando como um sistema só — para revendas de veículos e clínicas que querem cliente na loja, não apenas clique no anúncio.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="https://wa.me/5519997528044?text=Ol%C3%A1%2C%20quero%20o%20diagn%C3%B3stico%20gratuito%20da%20Kalman%20Systems." target="_blank" rel="noopener">Pedir diagnóstico gratuito</a>
-        <a class="btn btn-ghost" href="#funil">Ver como funciona</a>
-      </div>
-      <p class="hero-note">Diagnóstico inicial sem custo · resposta em até 1 dia útil</p>
-      <div class="nichos-tag">
-        <span class="nicho-pill"><span class="dot"></span>revendas de veículos</span>
-        <span class="nicho-pill p2"><span class="dot"></span>clínicas médicas</span>
-      </div>
-    </div>
-
-    <div class="hero-panel reveal in" aria-hidden="true">
-      <div class="chart-label"><span>leads brutos</span><span>vendas &amp; agendamentos</span></div>
-      <svg viewBox="0 0 420 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="10" y1="180" x2="410" y2="180" stroke="rgba(143,161,184,.25)" stroke-width="1.5"/>
-        <line x1="10" y1="10" x2="10" y2="180" stroke="rgba(143,161,184,.25)" stroke-width="1.5"/>
-        <path class="draw" d="M10 142 L50 86 L85 132 L120 66 L155 118 L190 80 L220 104"
-              stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path class="draw2" d="M220 104 C 270 90, 330 64, 400 44"
-              stroke="#EAF1F9" stroke-width="3.5" stroke-linecap="round"/>
-        <circle class="dot-pulse" cx="400" cy="44" r="6" fill="#FF6B2C"/>
+<!-- ================= CABEÇALHO ================= -->
+<header class="header" id="header">
+  <div class="wrap header__in">
+    <a href="#" class="brand" aria-label="Kalman Systems — início">
+      <svg class="brand__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="30" height="30" rx="3" stroke="#0A1F33" stroke-width="1.5"/>
+        <path d="M10 8v16M10 16l7-8M10 16l7 8" stroke="#C2551F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="23" cy="16" r="1.8" fill="#4A7FA5"/>
       </svg>
-      <div class="chart-foot"><span>sinal ruidoso</span><span class="est">resultado previsível</span></div>
-      <div class="hero-stats">
-        <div class="hstat"><b data-count="24" data-suffix="/7">0/7</b><span>robô atendendo, inclusive madrugada</span></div>
-        <div class="hstat"><b data-count="60" data-prefix="&lt;" data-suffix="s">&lt;0s</b><span>primeira resposta ao lead</span></div>
-        <div class="hstat"><b data-count="100" data-suffix="%">0%</b><span>dos leads respondidos e registrados</span></div>
-      </div>
-    </div>
+      <span class="brand__txt">Kalman <b>Systems</b></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#metodo">Método</a>
+      <a href="#escopos">Escopos</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a href="https://wa.me/5519997528044?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20projeto" class="btn btn--solid btn--sm" target="_blank" rel="noopener">Falar com a Kalman</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
-<div class="marquee-band" aria-label="Plataformas que operamos">
-  <p class="marquee-title">Plataformas que operamos por você</p>
-  <div class="marquee">
-    <div class="marquee-track">
-      <span class="plat"><b>›</b> Google Ads</span>
-      <span class="plat"><b>›</b> Meta Ads</span>
-      <span class="plat"><b>›</b> WhatsApp Business API</span>
-      <span class="plat"><b>›</b> Google Analytics 4</span>
-      <span class="plat"><b>›</b> Google Maps / Perfil da Empresa</span>
-      <span class="plat"><b>›</b> Automação n8n</span>
-      <span class="plat"><b>›</b> Agendamento integrado</span>
-      <span class="plat"><b>›</b> Remarketing</span>
+<main id="conteudo">
+
+<!-- ================= ABERTURA ================= -->
+<section class="hero">
+  <div class="wrap hero__in">
+    <div class="hero__copy rv">
+      <p class="label">Campinas e região · SP</p>
+      <h1>Marketing tratado como <em>sistema</em>, não como aposta.</h1>
+      <p class="hero__sub">Construímos o site, colocamos os anúncios no ar e automatizamos o atendimento no WhatsApp. Cada peça é medida, e o que não gera contato é corrigido.</p>
+      <div class="hero__cta">
+        <a href="https://wa.me/5519997528044?text=Ol%C3%A1%2C%20quero%20um%20diagn%C3%B3stico%20do%20meu%20neg%C3%B3cio" class="btn btn--accent" target="_blank" rel="noopener">
+          Solicitar diagnóstico
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#metodo" class="btn btn--line">Conhecer o método</a>
+      </div>
+      <ul class="hero__meta">
+        <li><b data-n="7">0</b><span>dias até o site no ar</span></li>
+        <li><b data-n="24">0</b><span>h de atendimento ativo</span></li>
+        <li><b data-n="100" data-suffix="%">0</b><span>dos ativos em seu nome</span></li>
+      </ul>
     </div>
-    <div class="marquee-track" aria-hidden="true">
-      <span class="plat"><b>›</b> Google Ads</span>
-      <span class="plat"><b>›</b> Meta Ads</span>
-      <span class="plat"><b>›</b> WhatsApp Business API</span>
-      <span class="plat"><b>›</b> Google Analytics 4</span>
-      <span class="plat"><b>›</b> Google Maps / Perfil da Empresa</span>
-      <span class="plat"><b>›</b> Automação n8n</span>
-      <span class="plat"><b>›</b> Agendamento integrado</span>
-      <span class="plat"><b>›</b> Remarketing</span>
+
+    <!-- Assinatura visual: o filtro de Kalman, que dá nome à empresa -->
+    <div class="hero__figure rv">
+      <figure class="figure">
+        <div class="figure__head">
+          <span class="figure__title">Contatos por semana</span>
+          <div class="figure__legend">
+            <span><i class="k-noise"></i>Medição</span>
+            <span><i class="k-signal"></i>Tendência</span>
+          </div>
+        </div>
+        <svg viewBox="0 0 560 290" role="img" aria-label="Gráfico comparando a medição semanal de contatos, irregular, com a linha de tendência estimada, que cresce de forma constante.">
+          <g stroke="#EBEFF3" stroke-width="1">
+            <line x1="0" y1="240" x2="560" y2="240"/>
+            <line x1="0" y1="180" x2="560" y2="180"/>
+            <line x1="0" y1="120" x2="560" y2="120"/>
+            <line x1="0" y1="60" x2="560" y2="60"/>
+          </g>
+          <polyline class="trace trace--noise" fill="none" stroke="#C9D4DE" stroke-width="1.5" stroke-linejoin="round"
+            points="0.0,221.2 23.3,223.3 46.7,184.6 70.0,170.1 93.3,160.8 116.7,152.2 140.0,155.5 163.3,149.0 186.7,148.8 210.0,118.1 233.3,123.0 256.7,120.0 280.0,74.2 303.3,109.8 326.7,111.8 350.0,98.2 373.3,57.0 396.7,66.2 420.0,72.9 443.3,66.0 466.7,85.9 490.0,82.7 513.3,76.5 536.7,61.8 560.0,84.9"/>
+          <polyline class="trace trace--signal" fill="none" stroke="#C2551F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+            points="0.0,225.0 23.3,208.1 46.7,192.9 70.0,179.2 93.3,167.0 116.7,156.0 140.0,146.1 163.3,137.3 186.7,129.4 210.0,122.2 233.3,115.8 256.7,110.1 280.0,105.0 303.3,100.4 326.7,96.2 350.0,92.5 373.3,89.2 396.7,86.2 420.0,83.5 443.3,81.1 466.7,78.9 490.0,77.0 513.3,75.2 536.7,73.7 560.0,72.3"/>
+          <g class="marker">
+            <circle cx="560" cy="72.3" r="4" fill="#C2551F"/>
+            <line x1="0" y1="269" x2="560" y2="269" stroke="#DCE3E9" stroke-width="1"/>
+            <text x="0" y="285" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8C9AA7">Semana 1</text>
+            <text x="560" y="285" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8C9AA7" text-anchor="end">Semana 25</text>
+          </g>
+        </svg>
+        <figcaption class="figure__foot">O nome vem do filtro de Kalman: o método que separa o sinal do ruído para estimar onde um sistema realmente está. É assim que lemos os números do seu negócio.</figcaption>
+      </figure>
     </div>
   </div>
-</div>
+</section>
 
-<section id="nichos">
+<!-- ================= SEGMENTOS ================= -->
+<section class="strip">
+  <div class="wrap strip__in">
+    <span class="strip__lead">Atendemos</span>
+    <ul>
+      <li>Oficinas e autocenters</li>
+      <li>Concessionárias e seminovos</li>
+      <li>Clínicas e consultórios</li>
+      <li>Serviços e comércio local</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= SERVIÇOS ================= -->
+<section class="sec" id="servicos">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Para quem</p>
-      <h2>Dois setores. Duas soluções sob medida.</h2>
-      <p>Não atendemos "qualquer negócio". Especializar significa chegar já conhecendo o seu problema — e com a solução montada para ele.</p>
+    <div class="sec__head rv">
+      <p class="label">Serviços</p>
+      <h2>Quatro frentes que funcionam juntas ou separadas</h2>
+      <p class="sec__sub">Contrate apenas o site, apenas o tráfego, ou a operação completa. O escopo acompanha o momento da empresa.</p>
     </div>
 
-    <div class="nichos">
-      <article class="nicho car reveal">
-        <p class="tag">// Revendas &amp; lojas de veículos</p>
-        <h3>Lead frio não compra carro</h3>
-        <p>O comprador manda mensagem para cinco lojas ao mesmo tempo — e fecha com a primeira que responde bem. Se o seu vendedor demora, o carro sai do pátio do concorrente.</p>
-        <div class="entregas">
-          <div class="entrega"><span class="chk">✓</span><span><b>Robô que qualifica o lead</b> na hora: modelo de interesse, troca, entrada e prazo — antes do vendedor entrar</span></div>
-          <div class="entrega"><span class="chk">✓</span><span><b>Campanhas Meta e Google</b> por modelo e faixa de preço, para quem já procura carro na sua região</span></div>
-          <div class="entrega"><span class="chk">✓</span><span><b>Agendamento de visita e test-drive</b> direto na conversa, com confirmação e lembrete</span></div>
-          <div class="entrega"><span class="chk">✓</span><span><b>Site com vitrine do estoque</b> — cada carro com página, fotos e botão de WhatsApp</span></div>
-          <div class="entrega"><span class="chk">✓</span><span><b>Remarketing</b> para quem viu o carro e não chamou — o anúncio segue o comprador</span></div>
-          <div class="entrega"><span class="chk">✓</span><span><b>Manutenção e consultoria contínuas</b> — site, campanhas e relatório mensal de custo por venda</span></div>
-        </div>
-        <a class="btn btn-wa" href="https://wa.me/5519997528044?text=Ol%C3%A1%2C%20tenho%20uma%20loja%20de%20ve%C3%ADculos%20e%20quero%20saber%20mais." target="_blank" rel="noopener">
-          <svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6s.6-1.8.9-2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.2c.1.2.1.4 0 .6l-.4.6-.5.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.2Z"/></svg>
-          Tenho uma loja de veículos
-        </a>
+    <div class="grid-svc">
+      <article class="svc rv">
+        <span class="svc__idx">01 / Presença</span>
+        <h3>Criação de sites</h3>
+        <p>Site institucional ou landing page com estrutura pensada para busca e para conversão. Publicado com domínio, SSL e analytics configurados.</p>
+        <ul>
+          <li>Layout responsivo, celular em primeiro lugar</li>
+          <li>SEO técnico e Google Meu Negócio</li>
+          <li>Carregamento otimizado</li>
+          <li>Treinamento para editar o conteúdo</li>
+        </ul>
       </article>
 
-      <article class="nicho cli reveal d1">
-        <p class="tag">// Clínicas médicas</p>
-        <h3>Sua recepção não deveria perder paciente</h3>
-        <p>Paciente que liga e não é atendido marca em outro lugar. Nosso robô responde na hora, tira dúvidas e agenda direto na agenda dos profissionais — 24 horas por dia.</p>
-        <div class="entregas">
-          <div class="entrega"><span class="chk">✓</span><span><b>Robô de atendimento no WhatsApp</b> que responde, qualifica e agenda sozinho</span></div>
-          <div class="entrega"><span class="chk">✓</span><span><b>Agendamento por profissional</b>, com confirmação e lembrete anti-falta</span></div>
-          <div class="entrega"><span class="chk">✓</span><span><b>Tráfego pago por especialidade</b> e região, com custo por paciente conhecido</span></div>
-          <div class="entrega"><span class="chk">✓</span><span><b>Site da clínica</b> com corpo clínico, convênios e agendamento online</span></div>
-          <div class="entrega"><span class="chk">✓</span><span><b>Recepção aliviada</b> — o telefone toca menos e a equipe cuida de quem está na clínica</span></div>
-        </div>
-        <a class="btn btn-wa" href="https://wa.me/5519997528044?text=Ol%C3%A1%2C%20tenho%20uma%20cl%C3%ADnica%20e%20quero%20saber%20mais." target="_blank" rel="noopener">
-          <svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6s.6-1.8.9-2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.2c.1.2.1.4 0 .6l-.4.6-.5.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.2Z"/></svg>
-          Tenho uma clínica
-        </a>
-        <p class="lgpd">Dados de pacientes tratados conforme a LGPD — coleta mínima, consentimento registrado e infraestrutura sob seu controle.</p>
+      <article class="svc rv">
+        <span class="svc__idx">02 / Demanda</span>
+        <h3>Gestão de tráfego pago</h3>
+        <p>Campanhas em Google e Meta segmentadas por região e intenção de busca, com acompanhamento do custo por contato e ajuste contínuo.</p>
+        <ul>
+          <li>Google Ads e Meta Ads</li>
+          <li>Segmentação por bairro e raio de atuação</li>
+          <li>Relatório mensal objetivo</li>
+          <li>Contas de anúncio no nome da sua empresa</li>
+        </ul>
+      </article>
+
+      <article class="svc rv">
+        <span class="svc__idx">03 / Atendimento</span>
+        <h3>Automação de WhatsApp</h3>
+        <p>Atendimento automático que responde, qualifica e agenda a qualquer hora, e transfere para uma pessoa quando a conversa exige.</p>
+        <ul>
+          <li>API oficial do WhatsApp Business</li>
+          <li>Triagem e respostas automáticas</li>
+          <li>Transferência para atendimento humano</li>
+          <li>Histórico centralizado em um painel</li>
+        </ul>
+      </article>
+
+      <article class="svc rv">
+        <span class="svc__idx">04 / Operação</span>
+        <h3>Agendamento online</h3>
+        <p>Página de agendamento ligada ao seu calendário. O cliente escolhe o horário disponível e recebe confirmação e lembrete sem ninguém digitar nada.</p>
+        <ul>
+          <li>Integrado ao site e ao WhatsApp</li>
+          <li>Confirmação e lembrete automáticos</li>
+          <li>Redução de faltas e de ligações</li>
+          <li>Agenda por profissional ou por serviço</li>
+        </ul>
       </article>
     </div>
   </div>
 </section>
 
-<section id="funil" style="padding-top:0">
+<!-- ================= MÉTODO ================= -->
+<section class="sec sec--alt" id="metodo">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Como funciona</p>
-      <h2>Do anúncio ao cliente na porta, sem vazamento</h2>
-      <p>A maioria dos negócios perde o lead entre o clique e a conversa. O sistema fecha cada etapa do funil — e mede onde cada real trabalhou.</p>
+    <div class="sec__head rv">
+      <p class="label">Método</p>
+      <h2>Do primeiro contato à publicação, em quatro etapas</h2>
+      <p class="sec__sub">Cada etapa tem entrega definida e prazo acordado. Você sabe o que vem a seguir em todos os momentos.</p>
     </div>
-    <div class="funil-box reveal">
-      <div class="frow">
-        <span class="fl">Anúncio certeiro</span>
-        <div class="bar"><div class="bar-fill" style="--w:100%"></div></div>
-        <span class="fr">Google + Meta, por modelo / especialidade</span>
-      </div>
-      <div class="frow">
-        <span class="fl">Clique vira conversa</span>
-        <div class="bar"><div class="bar-fill" style="--w:78%"></div></div>
-        <span class="fr">direto no WhatsApp, sem formulário</span>
-      </div>
-      <div class="frow">
-        <span class="fl">Robô qualifica</span>
-        <div class="bar"><div class="bar-fill" style="--w:56%"></div></div>
-        <span class="fr">resposta em segundos, 24/7</span>
-      </div>
-      <div class="frow">
-        <span class="fl">Visita agendada</span>
-        <div class="bar"><div class="bar-fill" style="--w:34%"></div></div>
-        <span class="fr">test-drive / consulta com lembrete</span>
-      </div>
-      <div class="frow">
-        <span class="fl">Venda registrada</span>
-        <div class="bar"><div class="bar-fill" style="--w:20%"></div></div>
-        <span class="fr">custo por venda no seu painel</span>
-      </div>
-      <p class="funil-note">representação do fluxo — os números reais do seu funil são medidos no seu painel, etapa por etapa</p>
-    </div>
-  </div>
-</section>
 
-<section class="wrap" id="metodo" style="padding-top:0">
-  <div class="metodo reveal">
-    <div class="sec-head" style="margin-bottom:0">
-      <p class="eyebrow">O método</p>
-      <h2>Medir, corrigir, <span class="grad-text">prever</span></h2>
-      <p>O nome não é enfeite. O filtro de Kalman é o algoritmo que extrai sinal confiável de dados ruidosos — usado em navegação de foguetes e no GPS do seu celular. É exatamente assim que tratamos o seu marketing.</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <p class="num">01 · MEDIR</p>
+    <ol class="steps">
+      <li class="step rv">
+        <span class="step__n">Etapa 01</span>
         <h3>Diagnóstico</h3>
-        <p>Instalamos rastreamento completo (pixel, GA4, conversões de WhatsApp) e mapeamos de onde vêm seus clientes hoje. Sem dado, não há decisão.</p>
-      </div>
-      <div class="step">
-        <p class="num">02 · CORRIGIR</p>
-        <h3>Implantação</h3>
-        <p>Site, campanhas, robô e agenda entram no ar. A cada semana, o que funciona recebe mais orçamento; o que não funciona é desligado.</p>
-      </div>
-      <div class="step">
-        <p class="num">03 · PREVER</p>
-        <h3>Escala previsível</h3>
-        <p>Com o custo por venda estável, você sabe quanto investir para obter quantos clientes. Marketing vira conta de engenharia, não aposta.</p>
-      </div>
-    </div>
+        <p>Entendemos o negócio, o público e a concorrência local. Definimos escopo e valores antes de qualquer trabalho começar.</p>
+      </li>
+      <li class="step rv">
+        <span class="step__n">Etapa 02</span>
+        <h3>Levantamento</h3>
+        <p>Reunimos textos, fotos, identidade visual e referências. Se faltar material, orientamos a produção do que for necessário.</p>
+      </li>
+      <li class="step rv">
+        <span class="step__n">Etapa 03</span>
+        <h3>Layout e aprovação</h3>
+        <p>Você recebe o layout navegável para revisar. As rodadas de ajuste estão previstas no escopo, sem cobrança adicional.</p>
+      </li>
+      <li class="step rv">
+        <span class="step__n">Etapa 04</span>
+        <h3>Publicação e medição</h3>
+        <p>Site no ar com domínio, certificado e analytics. A partir daí, acompanhamos os números e ajustamos o que precisar.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
-<section id="sistema" style="padding-top:0">
+<!-- ================= ESCOPOS ================= -->
+<section class="sec" id="escopos">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">O sistema</p>
-      <h2>Três peças que trabalham juntas</h2>
-      <p>Cada peça funciona sozinha — mas o resultado real aparece quando as três operam em malha fechada, com dados fluindo de uma para a outra.</p>
+    <div class="sec__head rv">
+      <p class="label">Escopos</p>
+      <h2>Três formatos, um valor fechado</h2>
+      <p class="sec__sub">Todos incluem layout responsivo, certificado SSL e SEO técnico. O valor é definido no diagnóstico e não muda no meio do caminho.</p>
     </div>
-    <div class="cards">
-      <article class="card reveal">
-        <div class="ic" aria-hidden="true">
-          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
-        </div>
-        <h3>Tráfego pago</h3>
-        <p>Campanhas no Google e Meta com orçamento controlado e otimização semanal — anúncio certo para quem já procura carro ou consulta na sua região.</p>
-        <p class="result">→ entrega: custo por lead conhecido</p>
-      </article>
-      <article class="card reveal d1">
-        <div class="ic" aria-hidden="true">
-          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1.1L3 20l1.1-5.3A8.5 8.5 0 1 1 21 11.5Z"/></svg>
-        </div>
-        <h3>Robô de WhatsApp</h3>
-        <p>Atendimento automático que responde em segundos, qualifica o interessado e encaminha para agendamento — inclusive de madrugada e no fim de semana.</p>
-        <p class="result">→ entrega: nenhum lead sem resposta</p>
-      </article>
-      <article class="card reveal d2">
-        <div class="ic" aria-hidden="true">
-          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 9h18M9 15l2 2 4-4"/></svg>
-        </div>
-        <h3>Agendamento automático</h3>
-        <p>O cliente escolhe o horário direto na conversa, recebe confirmação e lembrete. Menos falta, menos telefone tocando, agenda organizada por vendedor ou profissional.</p>
-        <p class="result">→ entrega: agenda cheia sem esforço manual</p>
-      </article>
-    </div>
-    <p class="flow-hint reveal">anúncio → conversa → <b>visita confirmada</b> → dado que otimiza o próximo anúncio</p>
-  </div>
-</section>
 
-<section id="resultados" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Prova</p>
-      <h2>Resultados dos pilotos</h2>
-      <p>Operamos com clientes reais da região antes de abrir a agenda — e cada número abaixo vem de painel rastreado, não de estimativa.</p>
-    </div>
-    <div class="cases">
-      <article class="case reveal">
-        <p class="setor">Piloto 01 · Concessionária de veículos</p>
-        <h3>Lead qualificado antes do vendedor atender</h3>
-        <p>Meta Ads + qualificação automática por WhatsApp: modelo de interesse, entrada e prazo antes do primeiro contato humano.</p>
-        <div class="metrics">
-          <div class="metric"><b>R$ —</b><span>custo por lead</span></div>
-          <div class="metric"><b>—%</b><span>leads qualificados</span></div>
-          <div class="metric"><b>—×</b><span>visitas à loja</span></div>
-        </div>
-        <p class="disclaimer">Números em consolidação — publicados assim que o painel do piloto fechar o primeiro ciclo.</p>
+    <div class="plans">
+      <article class="plan rv">
+        <span class="plan__scope">Escopo A</span>
+        <h3>Landing page</h3>
+        <p class="plan__desc">Página única e direta, feita para receber campanhas e transformar visita em contato.</p>
+        <ul>
+          <li>Página única com seções em rolagem</li>
+          <li>Formulário e botão de WhatsApp</li>
+          <li>Carregamento otimizado</li>
+          <li>Publicação em até 7 dias úteis</li>
+        </ul>
+        <a href="https://wa.me/5519997528044?text=Quero%20uma%20landing%20page" class="btn btn--line btn--full" target="_blank" rel="noopener">Solicitar proposta</a>
       </article>
-      <article class="case reveal d1">
-        <p class="setor">Piloto 02 · Oficina mecânica</p>
-        <h3>Do anúncio ao carro no elevador</h3>
-        <p>Campanha local no Google + robô que agenda a revisão direto na conversa.</p>
-        <div class="metrics">
-          <div class="metric"><b>R$ —</b><span>custo por lead</span></div>
-          <div class="metric"><b>—%</b><span>leads → agendamento</span></div>
-          <div class="metric"><b>— s</b><span>tempo de resposta</span></div>
-        </div>
-        <p class="disclaimer">Números em consolidação — publicados assim que o painel do piloto fechar o primeiro ciclo.</p>
+
+      <article class="plan plan--mark rv">
+        <span class="plan__tag">Mais contratado</span>
+        <span class="plan__scope">Escopo B</span>
+        <h3>Site institucional</h3>
+        <p class="plan__desc">A presença completa da empresa: quem é, o que faz, onde está e por onde falar com você.</p>
+        <ul>
+          <li>Até 5 páginas com conteúdo completo</li>
+          <li>Identidade visual da empresa aplicada</li>
+          <li>Google Meu Negócio configurado</li>
+          <li>Treinamento para edição de conteúdo</li>
+        </ul>
+        <a href="https://wa.me/5519997528044?text=Quero%20um%20site%20institucional" class="btn btn--solid btn--full" target="_blank" rel="noopener">Solicitar proposta</a>
+      </article>
+
+      <article class="plan rv">
+        <span class="plan__scope">Escopo C</span>
+        <h3>Site e automação</h3>
+        <p class="plan__desc">O site, o atendimento automático e a agenda operando como um sistema único.</p>
+        <ul>
+          <li>Tudo do escopo institucional</li>
+          <li>Atendimento automático 24 horas</li>
+          <li>Agendamento online integrado</li>
+          <li>Painel com histórico de conversas</li>
+        </ul>
+        <a href="https://wa.me/5519997528044?text=Quero%20site%20com%20automa%C3%A7%C3%A3o" class="btn btn--line btn--full" target="_blank" rel="noopener">Solicitar proposta</a>
       </article>
     </div>
   </div>
 </section>
 
-<section id="sobre" style="padding-top:0">
-  <div class="wrap sobre-grid">
-    <div class="reveal">
-      <p class="eyebrow">Quem está por trás</p>
-      <h2>Engenharia aplicada ao seu marketing</h2>
-      <p style="margin-top:14px;color:var(--muted);font-size:16.5px">A Kalman Systems nasce da convicção de que marketing digital para pequenas e médias empresas é, antes de tudo, um problema de engenharia: medir corretamente, automatizar o repetitivo e decidir com dados.</p>
+<!-- ================= DÚVIDAS ================= -->
+<section class="sec sec--alt" id="duvidas">
+  <div class="wrap wrap--narrow">
+    <div class="sec__head rv">
+      <p class="label">Dúvidas frequentes</p>
+      <h2>Antes de você perguntar</h2>
     </div>
-    <div class="sobre-facts reveal d1">
-      <div class="fact"><span class="mark">//</span><p>Fundada por engenheiro de Controle e Automação pela Unicamp.</p></div>
-      <div class="fact"><span class="mark">//</span><p>Experiência com machine learning e visão computacional em ambiente industrial, com sistemas em produção.</p></div>
-      <div class="fact"><span class="mark">//</span><p>Vivência em análise de crédito e produtos financeiros em grande banco — disciplina de risco aplicada ao seu orçamento de mídia.</p></div>
-      <div class="fact"><span class="mark">//</span><p>Infraestrutura própria de automação — seus dados e fluxos sob controle, sem dependência de plataforma de terceiros.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="faq" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
-      <p class="eyebrow">Dúvidas frequentes</p>
-      <h2>O que todo mundo pergunta antes de começar</h2>
-    </div>
-    <div class="faq reveal">
+    <div class="faq rv">
       <details>
-        <summary>Quanto preciso investir em anúncios? <span class="pm">+</span></summary>
-        <p class="ans">Depende do objetivo e da concorrência local — definimos juntos no diagnóstico. O princípio é começar com orçamento controlado, medir o custo por venda ou por agendamento e só escalar quando o número for previsível. Você nunca investe no escuro.</p>
+        <summary>O site fica no nome da minha empresa?</summary>
+        <p>Sim. Domínio, hospedagem e contas de anúncio são registrados no nome da sua empresa, com você como administrador. Se um dia decidir trocar de fornecedor, tudo continua seu — inclusive o histórico das campanhas.</p>
       </details>
       <details>
-        <summary>Em quanto tempo o sistema entra no ar? <span class="pm">+</span></summary>
-        <p class="ans">A implantação típica — site, rastreamento, robô de WhatsApp e primeiras campanhas — leva de 2 a 4 semanas, conforme a complexidade do agendamento e o material disponível (fotos do estoque, tabela, agenda dos profissionais).</p>
+        <summary>Quanto tempo leva até ficar pronto?</summary>
+        <p>Landing pages ficam prontas em até 7 dias úteis contados a partir do recebimento do material. Sites institucionais levam de 2 a 3 semanas, conforme o volume de conteúdo e as rodadas de aprovação.</p>
       </details>
       <details>
-        <summary>O robô substitui meus vendedores ou minha recepção? <span class="pm">+</span></summary>
-        <p class="ans">Não — ele tira da equipe o trabalho repetitivo: responder preço, disponibilidade e horário, e marcar a visita. O vendedor recebe a conversa já qualificada (modelo, troca, entrada, prazo) e entra na hora de vender.</p>
+        <summary>Preciso contratar tráfego junto com o site?</summary>
+        <p>Não. As frentes são independentes. Boa parte dos clientes começa pelo site e adiciona anúncios depois, quando quer acelerar a chegada de contatos.</p>
       </details>
       <details>
-        <summary>Já anuncio em portal de classificados. Preciso disso? <span class="pm">+</span></summary>
-        <p class="ans">Portal gera lead dividido com todos os concorrentes que anunciam lá. Tráfego próprio gera lead exclusivo, no seu WhatsApp, com seu custo conhecido — e o remarketing continua trabalhando quem visitou seu estoque. As duas fontes podem coexistir; a diferença é quem é dono do canal.</p>
+        <summary>A automação usa o número de WhatsApp que já uso?</summary>
+        <p>Trabalhamos com a API oficial do WhatsApp Business. É possível ativar no número atual ou em um número dedicado ao atendimento. Avaliamos qual caminho faz sentido no diagnóstico, considerando o volume de conversas e quem atende hoje.</p>
       </details>
       <details>
-        <summary>E a LGPD, no caso de clínicas? <span class="pm">+</span></summary>
-        <p class="ans">O fluxo é desenhado com coleta mínima: o robô registra apenas o necessário para agendar, com consentimento registrado na própria conversa, e os dados ficam em infraestrutura controlada — não espalhados em ferramentas de terceiros.</p>
+        <summary>E depois que o site está no ar?</summary>
+        <p>Você recebe treinamento para editar o conteúdo por conta própria e um canal direto para suporte. A manutenção mensal é opcional e nunca é condição para o site continuar funcionando.</p>
       </details>
       <details>
-        <summary>Tem fidelidade ou contrato longo? <span class="pm">+</span></summary>
-        <p class="ans">O modelo é de acompanhamento mensal com relatório do que foi medido. A permanência se sustenta pelo resultado no painel, não por multa contratual — as condições exatas são definidas na proposta.</p>
-      </details>
-      <details>
-        <summary>Atendem fora de Campinas? <span class="pm">+</span></summary>
-        <p class="ans">Atendemos Campinas, região e a cidade de São Paulo. Para outras praças, avaliamos caso a caso no diagnóstico.</p>
+        <summary>Vocês atendem fora de Campinas?</summary>
+        <p>Sim. A base é Campinas e a região metropolitana, onde conseguimos reuniões presenciais quando o projeto pede. Fora daí, o trabalho é feito à distância, sem prejuízo de prazo.</p>
       </details>
     </div>
   </div>
 </section>
 
-<section class="cta-final">
-  <div class="reveal">
-    <p class="eyebrow">Próximo passo</p>
-    <h2>Quanto custa um cliente novo para você hoje?</h2>
-    <p>Se você não sabe responder, o diagnóstico gratuito é o primeiro passo. Em uma conversa de 30 minutos, mapeamos onde seu dinheiro de marketing está vazando.</p>
-    <a class="btn btn-wa" style="font-size:17px;padding:16px 32px" href="https://wa.me/5519997528044?text=Ol%C3%A1%2C%20quero%20o%20diagn%C3%B3stico%20gratuito%20da%20Kalman%20Systems." target="_blank" rel="noopener">
-      <svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6s.6-1.8.9-2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.2c.1.2.1.4 0 .6l-.4.6-.5.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.2Z"/></svg>
-      Pedir diagnóstico no WhatsApp
-    </a>
+</main>
+
+<!-- ================= CHAMADA FINAL ================= -->
+<section class="cta">
+  <div class="wrap cta__in rv">
+    <div>
+      <p class="label label--light">Próximo passo</p>
+      <h2>Vamos olhar os números do seu negócio?</h2>
+      <p>O diagnóstico é uma conversa sem compromisso. Você sai dela com uma leitura do que já funciona, do que está sendo desperdiçado e do que faz sentido fazer primeiro.</p>
+    </div>
+    <div class="cta__side">
+      <a href="https://wa.me/5519997528044?text=Ol%C3%A1%2C%20quero%20agendar%20um%20diagn%C3%B3stico" class="btn btn--light" target="_blank" rel="noopener">
+        Agendar diagnóstico
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="tel:+5519997528044" class="cta__phone">+55 19 99752-8044</a>
+    </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap foot-inner">
-    <span>© 2026 Kalman Systems · Campinas e São Paulo, SP</span>
-    <span class="mono">medir · corrigir · prever</span>
+<!-- ================= RODAPÉ ================= -->
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div>
+      <a href="#" class="brand">
+        <svg class="brand__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="1" y="1" width="30" height="30" rx="3" stroke="#0A1F33" stroke-width="1.5"/>
+          <path d="M10 8v16M10 16l7-8M10 16l7 8" stroke="#C2551F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="23" cy="16" r="1.8" fill="#4A7FA5"/>
+        </svg>
+        <span class="brand__txt">Kalman <b>Systems</b></span>
+      </a>
+      <p>Consultoria digital para pequenas e médias empresas. Campinas e região metropolitana, São Paulo.</p>
+    </div>
+    <nav class="foot__col" aria-label="Seções do site">
+      <h4>Site</h4>
+      <a href="#servicos">Serviços</a>
+      <a href="#metodo">Método</a>
+      <a href="#escopos">Escopos</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <div class="foot__col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5519997528044" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:+5519997528044">+55 19 99752-8044</a>
+      <a href="mailto:contato@kalmansystems.com.br">contato@kalmansystems.com.br</a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="wrap foot__legal">
+    <p>© <span id="ano"></span> Kalman Systems. Todos os direitos reservados.</p>
+    <p>Campinas · SP</p>
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/5519997528044?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Kalman%20Systems." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 24 24" fill="#06240F"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6s.6-1.8.9-2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.2c.1.2.1.4 0 .6l-.4.6-.5.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.2Z"/></svg>
+<a href="https://wa.me/5519997528044?text=Ol%C3%A1%21" class="wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.6.1-.7l.4-.5c.1-.2.2-.3.3-.5v-.5c0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg>
+  <span>WhatsApp</span>
 </a>
 
 <script>
-  function toggleMenu(btn){
-    const m = document.getElementById('mobileMenu');
-    const open = m.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open);
-  }
-  function closeMenu(){
-    document.getElementById('mobileMenu').classList.remove('open');
-    document.querySelector('.menu-btn').setAttribute('aria-expanded','false');
-  }
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // reveal on scroll (também dispara barras do funil via .in)
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  /* Cabeçalho ganha fundo ao rolar */
+  var header = document.getElementById("header");
+  function stick(){ header.classList.toggle("is-stuck", window.scrollY > 10); }
+  window.addEventListener("scroll", stick, { passive:true });
+  stick();
+
+  /* Menu no celular */
+  var burger = document.getElementById("burger");
+  var nav = document.getElementById("nav");
+  if (burger && nav){
+    burger.addEventListener("click", function(){
+      var open = nav.classList.toggle("is-open");
+      burger.classList.toggle("is-open", open);
+      burger.setAttribute("aria-expanded", String(open));
     });
-  },{threshold:.14});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    nav.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        nav.classList.remove("is-open");
+        burger.classList.remove("is-open");
+        burger.setAttribute("aria-expanded","false");
+      });
+    });
+  }
 
-  // contadores animados
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function animateCount(el){
-    const target = parseInt(el.dataset.count,10);
-    const prefix = el.dataset.prefix ? '<' : '';
-    const suffix = el.dataset.suffix || '';
-    if(reduced){ el.textContent = prefix + target + suffix; return; }
-    const dur = 1400, t0 = performance.now();
-    function tick(t){
-      const p = Math.min((t - t0)/dur, 1);
-      const eased = 1 - Math.pow(1-p, 3);
-      el.textContent = prefix + Math.round(target*eased) + suffix;
-      if(p < 1) requestAnimationFrame(tick);
+  /* Revelação em rolagem */
+  var items = document.querySelectorAll(".rv");
+  if ("IntersectionObserver" in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); }
+      });
+    }, { threshold:0.12, rootMargin:"0px 0px -40px 0px" });
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add("on"); });
+  }
+
+  /* Contadores da abertura */
+  var nums = document.querySelectorAll("[data-n]");
+  function run(el){
+    var target = parseInt(el.dataset.n, 10);
+    var suffix = el.dataset.suffix || "";
+    var t0 = performance.now();
+    function tick(now){
+      var p = Math.min((now - t0) / 1100, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * e) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
   }
-  const ioCount = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ animateCount(e.target); ioCount.unobserve(e.target); }
-    });
-  },{threshold:.4});
-  document.querySelectorAll('[data-count]').forEach(el=>ioCount.observe(el));
+  if (nums.length){
+    if (reduce){
+      nums.forEach(function(el){ el.textContent = el.dataset.n + (el.dataset.suffix || ""); });
+    } else if ("IntersectionObserver" in window){
+      var cio = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){ run(e.target); cio.unobserve(e.target); }
+        });
+      }, { threshold:0.6 });
+      nums.forEach(function(el){ cio.observe(el); });
+    } else {
+      nums.forEach(run);
+    }
+  }
+
+  /* Ano no rodapé */
+  var ano = document.getElementById("ano");
+  if (ano) ano.textContent = new Date().getFullYear();
+})();
 </script>
 </body>
 </html>
